@@ -2,11 +2,13 @@
 #include "polygon.h"
 #include "rectangle.h"
 #include "RightTriangle.h"
+#include "rectangle.h"
+#include "rhombus.h"
 
 using namespace std;
 
 int main() {
-    // Create a rectangle object using the default constructor
+    // Create a Right Triangle object using the default constructor
     RightTriangle Rtri1;
     cout << "Created Right Triangle 1" << Rtri1 << endl;
 
@@ -15,7 +17,7 @@ int main() {
     float hypothenuse = Rtri1.GetHypotenuse();
     cout << "Right Triangle 1 - Width: " << base << ", Length: " << altitude << ", Hypothenuse: " << hypothenuse << endl;
 
-    // Create a rectangle object using the init constructor
+    // Create a Right Triangle object using the init constructor
     RightTriangle Rtri2(5.0f, 10.0f);
     cout << "\nCreated Right Triangle 2" << Rtri2 << endl;
 
@@ -28,12 +30,12 @@ int main() {
     cout << "\nArea of Right Triangle 2 (via Polygon): " << Rtri2.GetArea() << endl;
     cout << "Perimeter of Right Triangle 2 (via Polygon): " << Rtri2.GetPerimeter() << endl;
 
-    // Test the getters and setters from the Rectangle class
+    // Test the getters and setters from the Right Triangle class
     Rtri2.SetBase(7.0f);
     Rtri2.SetAltitude(14.0f);
     cout << "\nRight Triangle 2 - New Width: " << Rtri2.GetBase() << ", New Length: " << Rtri2.GetAltitude() << ", New Hypothenuse: " << Rtri2.GetHypotenuse() << endl;
 
-    // Test the copy constructor and assignment operator from the Rectangle class
+    // Test the copy constructor and assignment operator from the Right Triangle class
     RightTriangle Rtri3(Rtri2);
     cout << "\nRight Triangle 3 (Copy of Right Triangle 2) - Width: " << Rtri3.GetBase() << ", Length: " << Rtri3.GetAltitude() << ", Hypothenuse: " << Rtri3.GetHypotenuse() << endl;
 
@@ -41,10 +43,10 @@ int main() {
     Rtri4 = Rtri3;
     cout << "\nRight Triangle 4 (Assignment from Right Triangle 2) - Base: " << Rtri4.GetBase() << ", Altitude: " << Rtri4.GetAltitude() << ", Hypothenuse: " << Rtri4.GetHypotenuse() << endl;
 
-    // Test the drawing method from the Rectangle class
+    // Test the drawing method from the Right Triangle class
     Rtri4.Draw();
 
-    // Test the debug and serialization methods from the Rectangle class
+    // Test the debug and serialization methods from the Right Triangle class
     Rtri2.ErrorMessage("Test Error message");
     Rtri2.WarningMessage("Test Warning message");
     Rtri2.Dump();
